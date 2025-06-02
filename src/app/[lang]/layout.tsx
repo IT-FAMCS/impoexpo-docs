@@ -1,67 +1,56 @@
-import { DocsLayout } from "fumadocs-ui/layouts/docs";
+import type { Translations } from "fumadocs-ui/i18n";
+import "../global.css";
+import { RootProvider } from "fumadocs-ui/provider";
+import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
-import { baseOptions } from "@/app/layout.config";
-import { source } from "@/lib/source";
-import { Icon } from "@iconify/react";
+
+const inter = Inter({
+	subsets: ["latin", "cyrillic"],
+});
+
+const ru: Partial<Translations> = {
+	search: "Поиск",
+	searchNoResult: "Ничего не найдено",
+	toc: "На этой странице",
+	tocNoHeadings: "Нет заголовков",
+	lastUpdate: "Обновлено",
+	chooseLanguage: "Выберите язык",
+	nextPage: "Следующая страница",
+	previousPage: "Предыдущая страница",
+	chooseTheme: "Тема",
+	editOnGithub: "Редактировать на Github",
+};
+
+const locales = [
+	{
+		name: "English",
+		locale: "en",
+	},
+	{
+		name: "Русский",
+		locale: "ru",
+	},
+];
 
 export default async function Layout({
 	params,
 	children,
 }: { params: Promise<{ lang: string }>; children: ReactNode }) {
-	const { lang } = await params;
+	const lang = (await params).lang;
 
 	return (
-		<DocsLayout
-			sidebar={{
-				tabs: [
-					{
-						title: lang === "ru" ? "Справочник" : "Guide",
-						description:
-							lang === "ru" ? "Для конечных пользователей" : "For end-users",
-						url: "/user",
-						icon: (
-							<div
-								className="rounded-lg p-1.5 shadow-lg ring-2 m-px border [&_svg]:size-6.5 md:[&_svg]:size-5"
-								style={
-									{
-										color: "rgba(0, 111, 238, 0.9)",
-										borderColor: "rgba(0, 111, 238, 0.9)",
-										"--tw-ring-color": "rgba(0, 111, 238, 0.5)",
-									} as object
-								}
-							>
-								<Icon icon="material-symbols:book-outline-rounded" />
-							</div>
-						),
-					},
-					{
-						title: "API",
-						description:
-							lang === "ru"
-								? "Для разработчиков интеграций"
-								: "For integration developers",
-						url: "/developer",
-						icon: (
-							<div
-								className="rounded-lg p-1.5 shadow-lg ring-2 m-px border [&_svg]:size-6.5 md:[&_svg]:size-5"
-								style={
-									{
-										color: "rgba(245, 165, 36, 0.9)",
-										borderColor: "rgba(245, 165, 36, 0.9)",
-										"--tw-ring-color": "rgba(245, 165, 36, 0.5)",
-									} as object
-								}
-							>
-								<Icon icon="material-symbols:developer-board-outline-rounded" />
-							</div>
-						),
-					},
-				],
-			}}
-			tree={source.pageTree[lang]}
-			{...baseOptions(lang)}
-		>
-			{children}
-		</DocsLayout>
+		<html lang={lang} className={inter.className} suppressHydrationWarning>
+			<body className="flex flex-col min-h-screen">
+				<RootProvider
+					i18n={{
+						locale: lang,
+						locales,
+						translations: { ru }[lang],
+					}}
+				>
+					{children}
+				</RootProvider>
+			</body>
+		</html>
 	);
 }
