@@ -17,12 +17,9 @@ jobs:
         run: pnpm i
       - name: Build
         run: pnpm build
-      - name: Copy the .next folder
-        run: |
-          mkdir docs
-          mv ./.next/ docs
       - name: Upload the .next folder
         uses: actions/upload-artifact@v4.6.2
         with:
+          include-hidden-files: true
           name: docs
-          path: docs/
+          path: .next/
