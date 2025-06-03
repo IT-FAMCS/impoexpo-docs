@@ -20,7 +20,7 @@ jobs:
       - name: Copy the .next folder
         run: |
           mkdir docs
-          mv ./.next docs
+          mv docs ./.next
       - name: Upload the .next folder
         uses: actions/upload-artifact@v4.6.2
         with:
