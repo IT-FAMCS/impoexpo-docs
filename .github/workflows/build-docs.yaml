@@ -21,4 +21,4 @@ jobs:
         uses: actions/upload-artifact@v4.6.2
         with:
           name: docs
-          path: ./.next/
+          path: .next
