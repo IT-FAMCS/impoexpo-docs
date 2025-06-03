@@ -1,0 +1,28 @@
+name: Build the impoexpo docs
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.1.0
+        with:
+          version: 10.11.1
+      - name: Setup node.js
+        run: pnpm env use --global lts
+      - name: Install dependencies
+        run: pnpm i
+      - name: Build
+        run: pnpm build
+      - name: Copy the standalone folder
+        run: |
+          mkdir docs
+          mv ./.next/standalone docs
+      - name: Upload the docs folder
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: docs
+          path: docs/
