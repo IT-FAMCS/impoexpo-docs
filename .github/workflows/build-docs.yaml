@@ -17,12 +17,8 @@ jobs:
         run: pnpm i
       - name: Build
         run: pnpm build
-      - name: Copy the standalone folder
-        run: |
-          mkdir docs
-          mv ./.next/standalone docs
-      - name: Upload the docs folder
+      - name: Upload the .next folder
         uses: actions/upload-artifact@v4.6.2
         with:
           name: docs
-          path: docs/
+          path: .next/
