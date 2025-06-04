@@ -16,10 +16,12 @@ jobs:
       - name: Install dependencies
         run: pnpm i
       - name: Build
-        run: pnpm build
+        run: |
+          pnpm build
+          cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/
       - name: Upload the .next folder
         uses: actions/upload-artifact@v4.6.2
         with:
           include-hidden-files: true
           name: docs
-          path: .next/
+          path: .next/standalone
