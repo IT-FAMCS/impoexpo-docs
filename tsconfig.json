@@ -32,5 +32,8 @@
 		".next/types/**/*.ts",
 		"content/docs/ru/user/nodes/literals.mdx"
 	],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules"],
+	"mdx": {
+		"checkMdx": true
+	}
 }

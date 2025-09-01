@@ -4,30 +4,33 @@
 	"private": true,
 	"scripts": {
 		"build": "next build",
-		"dev": "next dev --turbo",
-		"start": "next start",
+		"dev": "next dev --turbo -p 4000",
+		"start": "next start -p 4000",
 		"postinstall": "fumadocs-mdx"
 	},
 	"dependencies": {
-		"fumadocs-core": "15.5.0",
-		"fumadocs-mdx": "11.6.6",
-		"fumadocs-ui": "15.5.0",
-		"next": "15.3.3",
-		"react": "^19.1.0",
-		"react-dom": "^19.1.0",
+		"@radix-ui/react-popover": "^1.1.15",
+		"class-variance-authority": "^0.7.1",
+		"fumadocs-core": "15.7.7",
+		"fumadocs-mdx": "11.8.2",
+		"fumadocs-ui": "15.7.7",
+		"lucide-react": "^0.542.0",
+		"next": "15.5.2",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
 		"styled-jsx": "^5.1.7",
-		"tailwind-merge": "^3.3.0"
+		"tailwind-merge": "^3.3.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@iconify/react": "^6.0.0",
-		"@tailwindcss/postcss": "^4.1.8",
+		"@biomejs/biome": "^2.2.2",
+		"@iconify/react": "^6.0.1",
+		"@tailwindcss/postcss": "^4.1.12",
 		"@types/mdx": "^2.0.13",
-		"@types/node": "22.15.28",
-		"@types/react": "^19.1.6",
-		"@types/react-dom": "^19.1.5",
-		"postcss": "^8.5.4",
-		"tailwindcss": "^4.1.8",
-		"typescript": "^5.8.3"
+		"@types/node": "24.3.0",
+		"@types/react": "^19.1.12",
+		"@types/react-dom": "^19.1.9",
+		"postcss": "^8.5.6",
+		"tailwindcss": "^4.1.12",
+		"typescript": "^5.9.2"
 	}
 }

@@ -2,6 +2,7 @@ import { i18n } from "@/lib/i18n";
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import { GithubInfo } from "fumadocs-ui/components/github-info";
 import IconImage from "./icon.png";
+import Image from "next/image";
 
 export function baseOptions(locale: string): BaseLayoutProps {
 	return {
@@ -9,7 +10,7 @@ export function baseOptions(locale: string): BaseLayoutProps {
 		nav: {
 			title: (
 				<>
-					<img width={24} height={24} alt="impoexpo logo" src={IconImage.src} />
+					<Image width={24} height={24} alt="impoexpo logo" src={IconImage} />
 					impoexpo
 				</>
 			),
