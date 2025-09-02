@@ -3,7 +3,7 @@ title: Массив
 icon: mdi:script-text-outline
 ---
 
-## Пройтись по каждому элементу массива [#array-foreach]
+## Пройтись по каждому элементу массива... [#foreach]
 
 <Wrapper>
     ![array foreach node](./img/array-foreach.png)
@@ -29,7 +29,7 @@ icon: mdi:script-text-outline
     }
 }}/>
 
-## Размер массива
+## Размер массива [#length]
 
 <Wrapper>
     ![array length node](./img/array-length.png)
@@ -52,3 +52,57 @@ icon: mdi:script-text-outline
         description: "Размер переданного массива."
     }
 }}/>
+
+## Это первая итерация? [#is-first]
+
+<Wrapper>
+    ![array is first iteration node](./img/array-is-first.png)
+</Wrapper>
+
+Возвращает флаг, указывающий, является ли текущая итерация первой.
+
+<Callout>Под "итерацией" подразумевается не только прохождение по массиву, но и прохождение по любому [узлу-итератору](/user/nodes/introduction#iterators).</Callout>
+
+<TypeTable type={{
+    "объект": {
+        required: true,
+        type: "T",
+        description: "Объект, исходящий от узла-итератора.",
+        typeDescription: "Динамический тип.",
+        io: "input"
+    },
+    "первая итерация?": {
+        required: true,
+        type: "boolean",
+        io: "output",
+    }
+}}/>
+
+<Callout type="warning">Учтите, что если "объект" не будет исходить от узла-итератора, то узел всегда будет возвращать "ложь".</Callout>
+
+## Это последняя итерация? [#is-last]
+
+<Wrapper>
+    ![array is last iteration node](./img/array-is-last.png)
+</Wrapper>
+
+Возвращает флаг, указывающий, является ли текущая итерация последней.
+
+<Callout>Под "итерацией" подразумевается не только прохождение по массиву, но и прохождение по любому [узлу-итератору](/user/nodes/introduction#iterators).</Callout>
+
+<TypeTable type={{
+    "объект": {
+        required: true,
+        type: "T",
+        description: "Объект, исходящий от узла-итератора.",
+        typeDescription: "Динамический тип.",
+        io: "input"
+    },
+    "последняя итерация?": {
+        required: true,
+        type: "boolean",
+        io: "output",
+    }
+}}/>
+
+<Callout type="warning">Учтите, что если "объект" не будет исходить от узла-итератора, то узел всегда будет возвращать "ложь".</Callout>
