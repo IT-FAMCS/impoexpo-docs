@@ -3,4 +3,53 @@ title: Уведомления
 icon: mdi:message-badge-outline
 ---
 
-## meow
+## Ошибка [#error]
+
+<Wrapper>
+    ![notifications error node](./img/notifications-error.png)
+</Wrapper>
+
+Выдаёт ошибку пользователю и прерывает перенос данных.
+
+<TypeTable type={{
+    "сообщение": {
+        required: true,
+        type: "string",
+        io: "input",
+        description: "Сообщение, которое увидит пользователь.",
+    },
+}}/>
+
+## Предупреждение [#warning]
+
+<Wrapper>
+    ![notifications warning node](./img/notifications-warning.png)
+</Wrapper>
+
+Выдаёт предупреждение пользователю, не прерывая при этом перенос данных. Стоит использовать для некритических сбоев, несильно влияющих на перенос данных.
+
+<TypeTable type={{
+    "сообщение": {
+        required: true,
+        type: "string",
+        io: "input",
+        description: "Сообщение, которое увидит пользователь.",
+    },
+}}/>
+
+## Информация [#information]
+
+<Wrapper>
+    ![notifications information node](./img/notifications-information.png)
+</Wrapper>
+
+Выдаёт сообщение пользователю. Полезно для отладки проекта или просто информационных сообщений.
+
+<TypeTable type={{
+    "сообщение": {
+        required: true,
+        type: "string",
+        io: "input",
+        description: "Сообщение, которое увидит пользователь.",
+    },
+}}/>

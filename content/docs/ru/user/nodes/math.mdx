@@ -3,4 +3,284 @@ title: Математика
 icon: mdi:plus-minus-variant
 ---
 
-## meow
+## Модуль (|x|) [#abs]
+
+<Wrapper>
+    ![math abs node](./img/math-abs.png)
+</Wrapper>
+
+Берёт число по модулю. Например, `abs(-5) = 5`, `abs(3) = 3`.
+
+<TypeTable type={{
+    "ввод": {
+        required: true,
+        type: "number",
+        io: "input",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "number",
+        description: "Это же число, но по модулю.",
+        io: "output"
+    }
+}}/>
+
+## Сложить (x + y) [#add]
+
+<Wrapper>
+    ![math add node](./img/math-add.png)
+</Wrapper>
+
+Складывает два числа.
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Первое слагаемое.",
+        default: "0"
+    },
+    "B": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Второе слагаемое.",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "number",
+        description: "Результат суммы двух чисел.",
+        io: "output"
+    }
+}}/>
+
+## Делить (x / y) [#divide]
+
+<Wrapper>
+    ![math divide node](./img/math-divide.png)
+</Wrapper>
+
+Делит два числа.
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Числитель.",
+        default: "0"
+    },
+    "B": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Знаменатель.",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "number",
+        description: "Результат деления двух чисел.",
+        io: "output"
+    }
+}}/>
+
+<Callout type="warning">
+    Не делите на ноль, пожалуйста. Движок impoexpo вернёт вам бесконечность. Вам это не надо.
+</Callout>
+
+## Логарифм (ln x) [#log]
+
+<Wrapper>
+    ![math log node](./img/math-log.png)
+</Wrapper>
+
+Считает натуральный логарифм числа (ln).
+
+<TypeTable type={{
+    "ввод": {
+        required: true,
+        type: "number",
+        io: "input",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "number",
+        description: "ln(ввод)",
+        io: "output"
+    }
+}}/>
+
+## Остаток от деления (x % y) [#modulo]
+
+<Wrapper>
+    ![math modulo node](./img/math-modulo.png)
+</Wrapper>
+
+Считает остаток от деления одного числа на другое.
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Делимое.",
+        default: "0"
+    },
+    "B": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Делитель.",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "number",
+        description: "Остаток от деления чисел.",
+        io: "output"
+    }
+}}/>
+
+## Умножить (x * y) [#multiply]
+
+<Wrapper>
+    ![math multiply node](./img/math-multiply.png)
+</Wrapper>
+
+Перемножает два числа.
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Первый множитель.",
+        default: "0"
+    },
+    "B": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Второй множитель.",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "number",
+        description: "Результат умножения двух чисел.",
+        io: "output"
+    }
+}}/>
+
+## Отрицание (-x) [#negate]
+
+<Wrapper>
+    ![math negate node](./img/math-negate.png)
+</Wrapper>
+
+Меняет знак числа на противоположный.
+
+<TypeTable type={{
+    "ввод": {
+        required: true,
+        type: "number",
+        io: "input",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "number",
+        description: "Это же число, но с противоположным знаком.",
+        io: "output"
+    }
+}}/>
+
+## Возвести в степень (x ^ y) [#power]
+
+<Wrapper>
+    ![math power node](./img/math-power.png)
+</Wrapper>
+
+Возводит число в степень.
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Число, которое следует возвести в некую степень.",
+        default: "0"
+    },
+    "B": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Степень, в которую требуется возвести число.",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "number",
+        description: "Результат возведения числа в степень.",
+        io: "output"
+    }
+}}/>
+
+## Вычесть (x - y) [#subtract]
+
+<Wrapper>
+    ![math subtract node](./img/math-subtract.png)
+</Wrapper>
+
+Вычитает одно число из другого.
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Уменьшаемое.",
+        default: "0"
+    },
+    "B": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Вычитаемое.",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "number",
+        description: "Результат разности двух чисел.",
+        io: "output"
+    }
+}}/>
+
+## Является ли число целым? [#is-integer]
+
+<Wrapper>
+    ![math is integer node](./img/math-is-integer.png)
+</Wrapper>
+
+Возвращает флаг, указывающий, является ли число целым (а не дробью).
+
+<TypeTable type={{
+    "число": {
+        required: true,
+        type: "number",
+        io: "input",
+        description: "Проверяемое число.",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "boolean",
+        io: "output"
+    }
+}}/>

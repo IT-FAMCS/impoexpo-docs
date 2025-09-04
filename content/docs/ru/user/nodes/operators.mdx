@@ -3,4 +3,226 @@ title: Операторы
 icon: mdi:code-brackets
 ---
 
-## meow
+## И... (x && y) [#and]
+
+<Wrapper>
+    ![operators and node](./img/operators-and.png)
+</Wrapper>
+
+Логическое И — возвращает флаг, указывающий, имеют ли оба переданных флага значение "истина", т.е. "выполнено ли и то, и то?"
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "boolean",
+        io: "input",
+        default: "ложь (false)"
+    },
+    "B": {
+        required: true,
+        type: "boolean",
+        io: "input",
+        default: "ложь (false)"
+    },
+    "результат": {
+        required: true,
+        type: "boolean",
+        description: "A && B",
+        io: "output"
+    }
+}}/>
+
+## Равно... (==) [#equal]
+
+<Wrapper>
+    ![operators equal node](./img/operators-equal.png)
+</Wrapper>
+
+Возвращает флаг, указывающий, равны ли два переданных объекта между собой.
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "T (динамический тип)",
+        io: "input",
+    },
+    "B": {
+        required: true,
+        type: "T (динамический тип)",
+        io: "input",
+    },
+    "результат": {
+        required: true,
+        type: "boolean",
+        description: "A == B",
+        io: "output"
+    }
+}}/>
+
+## Больше или равно... (>=) [#greater-or-eq]
+
+<Wrapper>
+    ![operators greater or equal to node](./img/operators-greater-or-eq.png)
+</Wrapper>
+
+Возвращает флаг, указывающий, является ли число больше или равно другого.
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "number",
+        io: "input",
+        default: "0"
+    },
+    "B": {
+        required: true,
+        type: "number",
+        io: "input",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "boolean",
+        description: "A >= B",
+        io: "output"
+    }
+}}/>
+
+## Больше чем... (>=) [#greater-than]
+
+<Wrapper>
+    ![operators greater than node](./img/operators-greater-than.png)
+</Wrapper>
+
+Возвращает флаг, указывающий, является ли число **строго** больше другого.
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "number",
+        io: "input",
+        default: "0"
+    },
+    "B": {
+        required: true,
+        type: "number",
+        io: "input",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "boolean",
+        description: "A > B",
+        io: "output"
+    }
+}}/>
+
+## Меньше или равно... (>=) [#less-or-eq]
+
+<Wrapper>
+    ![operators less or equal to node](./img/operators-less-or-eq.png)
+</Wrapper>
+
+Возвращает флаг, указывающий, является ли число меньше или равно другого.
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "number",
+        io: "input",
+        default: "0"
+    },
+    "B": {
+        required: true,
+        type: "number",
+        io: "input",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "boolean",
+        description: "A <= B",
+        io: "output"
+    }
+}}/>
+
+## Меньше чем... (>=) [#less-than]
+
+<Wrapper>
+    ![operators less than node](./img/operators-less-than.png)
+</Wrapper>
+
+Возвращает флаг, указывающий, является ли число **строго** меньше другого.
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "number",
+        io: "input",
+        default: "0"
+    },
+    "B": {
+        required: true,
+        type: "number",
+        io: "input",
+        default: "0"
+    },
+    "результат": {
+        required: true,
+        type: "boolean",
+        description: "A < B",
+        io: "output"
+    }
+}}/>
+
+## Не... (!x) [#not]
+
+<Wrapper>
+    ![operators not node](./img/operators-not.png)
+</Wrapper>
+
+Меняет значение флага на противоположное. "Истина" (true) становится "ложью" (false), и наоборот.
+
+<TypeTable type={{
+    "ввод": {
+        required: true,
+        type: "boolean",
+        io: "input",
+        default: "ложь (false)"
+    },
+    "результат": {
+        required: true,
+        type: "boolean",
+        description: "!ввод",
+        io: "output"
+    }
+}}/>
+
+## Или... (x || y) [#or]
+
+<Wrapper>
+    ![operators or node](./img/operators-or.png)
+</Wrapper>
+
+Логическое ИЛИ — возвращает флаг, указывающий, имеет ли один из переданных флагов значение "истина", т.е. "выполнено ли одно из условий?"
+
+<TypeTable type={{
+    "A": {
+        required: true,
+        type: "boolean",
+        io: "input",
+        default: "ложь (false)"
+    },
+    "B": {
+        required: true,
+        type: "boolean",
+        io: "input",
+        default: "ложь (false)"
+    },
+    "результат": {
+        required: true,
+        type: "boolean",
+        description: "A || B",
+        io: "output"
+    }
+}}/>

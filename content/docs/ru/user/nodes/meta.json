@@ -2,13 +2,13 @@
 	"title": "Узлы",
 	"pages": [
 		"introduction",
-		"array",
+		"arrays",
 		"conditional",
 		"date-time",
 		"literals",
 		"math",
 		"notifications",
 		"operators",
-		"string"
+		"strings"
 	]
 }
